@@ -20,7 +20,7 @@ function setBGColor($div, currentTime, textTime)
         else
         {
             console.log("p < a");
-            $div.addClass("bg-primary");
+            $div.addClass("bg-success");
         }
     }
     else
@@ -45,12 +45,12 @@ function setBGColor($div, currentTime, textTime)
             else
             {
                 console.log("current less");
-                $div.addClass("bg-primary");
+                $div.addClass("bg-success");
             }
         }
         else
         {
-            $div.addClass("bg-warning");
+            $div.addClass("bg-danger");
         }
     }
 }
@@ -70,15 +70,15 @@ function generateHourBlock(iterations)
 
         $iBlock = $("<div>").addClass("row py-1");
     
-        $iTimeText = $("<h5>").addClass("text-center").text(text_time);
-        $iTimeDiv = $("<div>").addClass("col-2 py-3 bg-warning align-middle").append($iTimeText);
+        $iTimeText = $("<h5>").addClass("text-center text-light").text(text_time);
+        $iTimeDiv = $("<div>").addClass("col-2 py-3 bg-warning align-middle bg-dark").append($iTimeText);
 
         $iTextDiv = $("<textarea>").addClass("col-8 py-3 overflow-auto").text("").attr("id", text_time);
         setBGColor($iTextDiv, currentTime, text_time);
     
         $iLockIcon = $("<span>").addClass("lock");
 
-        $iLockDiv = $("<div>").addClass("col-1 py-3 lock-container border border-primary").append($iLockIcon);
+        $iLockDiv = $("<div>").addClass("col-1 py-3 lock-container border border-primary bg-warning").append($iLockIcon);
         
         $iLockIcon.toggleClass('unlocked');
     
